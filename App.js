@@ -1,11 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import FisrtScreen from "./src/screens/FisrtScreen";
+import SecondScreen from "./src/screens/SecondScreen";
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Fisrt" component={FisrtScreen}/>
+        <Stack.Screen name="Second" component={SecondScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
